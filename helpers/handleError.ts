@@ -1,6 +1,6 @@
 import Toast from 'react-native-toast-message';
 
-export function handleError(error: any): void {
+export function handleError(error: any): string {
     let message = '';
     if (error.response) {
         message = error.response.data ? error.response.data.message : 'Unexpected Error';
@@ -13,4 +13,5 @@ export function handleError(error: any): void {
     if(message) {
         Toast.show({type: 'error', text1: 'error', text2: message});
     }
+    return message;
 }
